@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>159e3bb6-707a-4bcf-8f66-b25520df7893</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+        </Field>
+        <Field Name="filter">
+          <DataField>filter</DataField>
+        </Field>
+        <Field Name="Vendor_No_">
+          <DataField>Vendor_No_</DataField>
+        </Field>
+        <Field Name="Amount">
+          <DataField>Amount</DataField>
+        </Field>
+        <Field Name="AmountFormat">
+          <DataField>AmountFormat</DataField>
+        </Field>
+        <Field Name="VendorName">
+          <DataField>VendorName</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Tablix Name="Tablix2">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="filter">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Code.Filters(Fields!filter.Value)</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>filter</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!filter.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>0.5in</Top>
+            <Left>0in</Left>
+            <Height>0.25in</Height>
+            <Width>3in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix1">
+            <TablixCorner>
+              <TablixCornerRows>
+                <TablixCornerRow>
+                  <TablixCornerCell>
+                    <CellContents>
+                      <Textbox Name="Textbox3">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Vendor Name</Value>
+                                <Style>
+                                  <FontSize>11pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#666666</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Right</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox3</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <TopBorder>
+                            <Style>Solid</Style>
+                          </TopBorder>
+                          <BottomBorder>
+                            <Style>Solid</Style>
+                            <Width>0.25pt</Width>
+                          </BottomBorder>
+                          <LeftBorder>
+                            <Style>Solid</Style>
+                          </LeftBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixCornerCell>
+                </TablixCornerRow>
+              </TablixCornerRows>
+            </TablixCorner>
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1in</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Amount">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Sum(iif( Fields!VendorName.Value is Nothing ,Nothing, Fields!Amount.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Normal</FontWeight>
+                                    <Format>n2</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Amount</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(IIF((Fields!Name.Value = "Blank Company") Or (Fields!Name.Value = "CRONUS USA, Inc.") Or (Fields!Name.Value = "Consolidation Company") Or (Fields!Name.Value = "Consolidation test")  Or 
+	(Fields!Name.Value = "My Company") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D,LLC") Or 
+	(Fields!Name.Value = "BLUE Q BIOSCIENCES COPY") Or 
+	(Fields!Name.Value = "Bluefield Innovations Copy") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D Staging")  Or 
+	(Fields!Name.Value = "Training Company")  Or Fields!Name.Value="Ancora Reporting" Or Fields!Name.Value="Ancora Reporting YEC" Or Fields!Name.Value="Blue One Reporting" Or Fields!Name.Value="Blue One Reporting Copy" Or Fields!Name.Value="Blue One Reporting YEC" Or Fields!Name.Value="Blue One_Unposted" Or Fields!Name.Value="Blue Q Reporting" Or Fields!Name.Value="Blue Q Reporting YEC"  Or Fields!Name.Value="Blue Q_Unposted" Or Fields!Name.Value="Bluefield Reporting" Or Fields!Name.Value="Bluefield Reporting YEC" Or Fields!Name.Value="Bluefield_Unposted" Or Fields!Name.Value="Deerfield Reporting" Or Fields!Name.Value="Deerfield Reporting YEC" Or Fields!Name.Value="Exohalt Reporting" Or Fields!Name.Value="Exohalt Reporting YEC" Or Fields!Name.Value="Exohalt_Unposted" Or Fields!Name.Value="Galium Reporting" Or Fields!Name.Value="Galium Reporting YEC" Or Fields!Name.Value="Galium ReportingRev1 YEC" Or Fields!Name.Value="Galium_Unposted" Or Fields!Name.Value="Hudson Reporting" Or Fields!Name.Value="Hudson Reporting YEC" Or Fields!Name.Value="Hudson_Unposted" Or Fields!Name.Value="Lakeside Reporting" Or Fields!Name.Value="Lakeside Reporting YEC" Or Fields!Name.Value="Lakeside_Unposted" Or Fields!Name.Value="Pinnacle Reporting" Or Fields!Name.Value="Pinnacle Reporting YEC" Or Fields!Name.Value="Pinnacle_Unposted" Or Fields!Name.Value="Poseidon Reporting" Or Fields!Name.Value="Poseidon Reporting YEC" Or Fields!Name.Value="Poseidon_Unposted" Or Fields!Name.Value="Sync Test Exohalt" Or Fields!Name.Value="West Loop_Unposted" Or Fields!Name.Value="Westloop Reporting" Or Fields!Name.Value="Westloop Reporting YEC" Or Fields!Name.Value="TEST" Or Fields!VendorName.Value is Nothing, Nothing, Fields!Amount.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox8</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>Silver</Color>
+                              <Style>Solid</Style>
+                              <Width>0.5pt</Width>
+                            </Border>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+                <TablixRow>
+                  <Height>0.25in</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox6">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(IIF((Fields!Name.Value = "Blank Company") Or (Fields!Name.Value = "CRONUS USA, Inc.") Or (Fields!Name.Value = "Consolidation Company") Or (Fields!Name.Value = "Consolidation test")  Or 
+	(Fields!Name.Value = "My Company") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D,LLC") Or 
+	(Fields!Name.Value = "BLUE Q BIOSCIENCES COPY") Or 
+	(Fields!Name.Value = "Bluefield Innovations Copy") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D Staging")  Or 
+	(Fields!Name.Value = "Training Company")  Or Fields!Name.Value="Ancora Reporting" Or Fields!Name.Value="Ancora Reporting YEC" Or Fields!Name.Value="Blue One Reporting" Or Fields!Name.Value="Blue One Reporting Copy" Or Fields!Name.Value="Blue One Reporting YEC" Or Fields!Name.Value="Blue One_Unposted" Or Fields!Name.Value="Blue Q Reporting" Or Fields!Name.Value="Blue Q Reporting YEC"  Or Fields!Name.Value="Blue Q_Unposted" Or Fields!Name.Value="Bluefield Reporting" Or Fields!Name.Value="Bluefield Reporting YEC" Or Fields!Name.Value="Bluefield_Unposted" Or Fields!Name.Value="Deerfield Reporting" Or Fields!Name.Value="Deerfield Reporting YEC" Or Fields!Name.Value="Exohalt Reporting" Or Fields!Name.Value="Exohalt Reporting YEC" Or Fields!Name.Value="Exohalt_Unposted" Or Fields!Name.Value="Galium Reporting" Or Fields!Name.Value="Galium Reporting YEC" Or Fields!Name.Value="Galium ReportingRev1 YEC" Or Fields!Name.Value="Galium_Unposted" Or Fields!Name.Value="Hudson Reporting" Or Fields!Name.Value="Hudson Reporting YEC" Or Fields!Name.Value="Hudson_Unposted" Or Fields!Name.Value="Lakeside Reporting" Or Fields!Name.Value="Lakeside Reporting YEC" Or Fields!Name.Value="Lakeside_Unposted" Or Fields!Name.Value="Pinnacle Reporting" Or Fields!Name.Value="Pinnacle Reporting YEC" Or Fields!Name.Value="Pinnacle_Unposted" Or Fields!Name.Value="Poseidon Reporting" Or Fields!Name.Value="Poseidon Reporting YEC" Or Fields!Name.Value="Poseidon_Unposted" Or Fields!Name.Value="Sync Test Exohalt" Or Fields!Name.Value="West Loop_Unposted" Or Fields!Name.Value="Westloop Reporting" Or Fields!Name.Value="Westloop Reporting YEC" Or Fields!Name.Value="TEST" Or Fields!VendorName.Value is Nothing, Nothing, Fields!Amount.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Width>0.25pt</Width>
+                            </TopBorder>
+                            <RightBorder>
+                              <Style>None</Style>
+                            </RightBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=SUM(IIF((Fields!Name.Value = "Blank Company") Or (Fields!Name.Value = "CRONUS USA, Inc.") Or (Fields!Name.Value = "Consolidation Company") Or (Fields!Name.Value = "Consolidation test")  Or 
+	(Fields!Name.Value = "My Company") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D,LLC") Or 
+	(Fields!Name.Value = "BLUE Q BIOSCIENCES COPY") Or 
+	(Fields!Name.Value = "Bluefield Innovations Copy") Or 
+	(Fields!Name.Value = "Deerfield D&amp;D Staging")  Or 
+	(Fields!Name.Value = "Training Company")  Or Fields!Name.Value="Ancora Reporting" Or Fields!Name.Value="Ancora Reporting YEC" Or Fields!Name.Value="Blue One Reporting" Or Fields!Name.Value="Blue One Reporting Copy" Or Fields!Name.Value="Blue One Reporting YEC" Or Fields!Name.Value="Blue One_Unposted" Or Fields!Name.Value="Blue Q Reporting" Or Fields!Name.Value="Blue Q Reporting YEC"  Or Fields!Name.Value="Blue Q_Unposted" Or Fields!Name.Value="Bluefield Reporting" Or Fields!Name.Value="Bluefield Reporting YEC" Or Fields!Name.Value="Bluefield_Unposted" Or Fields!Name.Value="Deerfield Reporting" Or Fields!Name.Value="Deerfield Reporting YEC" Or Fields!Name.Value="Exohalt Reporting" Or Fields!Name.Value="Exohalt Reporting YEC" Or Fields!Name.Value="Exohalt_Unposted" Or Fields!Name.Value="Galium Reporting" Or Fields!Name.Value="Galium Reporting YEC" Or Fields!Name.Value="Galium ReportingRev1 YEC" Or Fields!Name.Value="Galium_Unposted" Or Fields!Name.Value="Hudson Reporting" Or Fields!Name.Value="Hudson Reporting YEC" Or Fields!Name.Value="Hudson_Unposted" Or Fields!Name.Value="Lakeside Reporting" Or Fields!Name.Value="Lakeside Reporting YEC" Or Fields!Name.Value="Lakeside_Unposted" Or Fields!Name.Value="Pinnacle Reporting" Or Fields!Name.Value="Pinnacle Reporting YEC" Or Fields!Name.Value="Pinnacle_Unposted" Or Fields!Name.Value="Poseidon Reporting" Or Fields!Name.Value="Poseidon Reporting YEC" Or Fields!Name.Value="Poseidon_Unposted" Or Fields!Name.Value="Sync Test Exohalt" Or Fields!Name.Value="West Loop_Unposted" Or Fields!Name.Value="Westloop Reporting" Or Fields!Name.Value="Westloop Reporting YEC" Or Fields!Name.Value="TEST" Or Fields!VendorName.Value is Nothing, Nothing, Fields!Amount.Value))</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                    <Format>n2</Format>
+                                    <Color>#333333</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Width>0.25pt</Width>
+                            </TopBorder>
+                            <BackgroundColor>White</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Name">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Name.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Name.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="Name">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Name.Value</Value>
+                                <Style>
+                                  <FontWeight>Normal</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Name</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <TopBorder>
+                            <Style>Solid</Style>
+                          </TopBorder>
+                          <BottomBorder>
+                            <Style>Solid</Style>
+                            <Width>0.25pt</Width>
+                          </BottomBorder>
+                          <LeftBorder>
+                            <Style>Solid</Style>
+                          </LeftBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <rd:Selected>true</rd:Selected>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                  <Visibility>
+                    <Hidden>=Fields!Name.Value= "Blank Company" Or Fields!Name.Value="CRONUS USA, Inc."  Or Fields!Name.Value = "Consolidation Company" Or Fields!Name.Value="Consolidation test"  Or Fields!Name.Value="My Company" Or Fields!Name.Value="BLUE Q BIOSCIENCES COPY" Or Fields!Name.Value="Bluefield Innovations Copy" Or Fields!Name.Value="Deerfield D&amp;D Staging" Or Fields!Name.Value="Training Company" Or Fields!Name.Value="Ancora Reporting" Or Fields!Name.Value="Ancora Reporting YEC" Or Fields!Name.Value="Blue One Reporting" Or Fields!Name.Value="Blue One Reporting Copy" Or Fields!Name.Value="Blue One Reporting YEC" Or Fields!Name.Value="Blue One_Unposted" Or Fields!Name.Value="Blue Q Reporting" Or Fields!Name.Value="Blue Q Reporting YEC"  Or Fields!Name.Value="Blue Q_Unposted" Or Fields!Name.Value="Bluefield Reporting" Or Fields!Name.Value="Bluefield Reporting YEC" Or Fields!Name.Value="Bluefield_Unposted" Or Fields!Name.Value="Deerfield Reporting" Or Fields!Name.Value="Deerfield Reporting YEC" Or Fields!Name.Value="Exohalt Reporting" Or Fields!Name.Value="Exohalt Reporting YEC" Or Fields!Name.Value="Exohalt_Unposted" Or Fields!Name.Value="Galium Reporting" Or Fields!Name.Value="Galium Reporting YEC" Or Fields!Name.Value="Galium ReportingRev1 YEC" Or Fields!Name.Value="Galium_Unposted" Or Fields!Name.Value="Hudson Reporting" Or Fields!Name.Value="Hudson Reporting YEC" Or Fields!Name.Value="Hudson_Unposted" Or Fields!Name.Value="Lakeside Reporting" Or Fields!Name.Value="Lakeside Reporting YEC" Or Fields!Name.Value="Lakeside_Unposted" Or Fields!Name.Value="Pinnacle Reporting" Or Fields!Name.Value="Pinnacle Reporting YEC" Or Fields!Name.Value="Pinnacle_Unposted" Or Fields!Name.Value="Poseidon Reporting" Or Fields!Name.Value="Poseidon Reporting YEC" Or Fields!Name.Value="Poseidon_Unposted" Or Fields!Name.Value="Sync Test Exohalt" Or Fields!Name.Value="West Loop_Unposted" Or Fields!Name.Value="Westloop Reporting" Or Fields!Name.Value="Westloop Reporting YEC" Or Fields!Name.Value="TEST"</Hidden>
+                  </Visibility>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox7">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Total</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox7</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BottomBorder>
+                            <Width>0.25pt</Width>
+                          </BottomBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="VendorName">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!VendorName.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!VendorName.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="VendorName">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!VendorName.Value</Value>
+                                <Style>
+                                  <FontWeight>Normal</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>VendorName</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Color>Silver</Color>
+                            <Style>Solid</Style>
+                          </Border>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>1in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox5">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Total</Value>
+                                <Style>
+                                  <FontWeight>Bold</FontWeight>
+                                  <Color>#333333</Color>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox5</rd:DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                          <TopBorder>
+                            <Width>0.25pt</Width>
+                          </TopBorder>
+                          <RightBorder>
+                            <Style>None</Style>
+                          </RightBorder>
+                          <BackgroundColor>White</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                </TablixMember>
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet_Result</DataSetName>
+            <Top>1in</Top>
+            <Left>0in</Left>
+            <Height>0.75in</Height>
+            <Width>3in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>Solid</Style>
+              </Border>
+              <TopBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </TopBorder>
+              <BottomBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </BottomBorder>
+              <LeftBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </LeftBorder>
+              <RightBorder>
+                <Color>Black</Color>
+                <Style>Solid</Style>
+                <Width>1pt</Width>
+              </RightBorder>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Vendor Spend Report</Value>
+                    <Style>
+                      <FontSize>24pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox10</rd:DefaultName>
+            <Top>0.01958in</Top>
+            <Left>0.03in</Left>
+            <Height>0.41097in</Height>
+            <Width>3.32417in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>2in</Height>
+        <Style />
+      </Body>
+      <Width>6.5in</Width>
+      <Page>
+        <PageHeight>8.5in</PageHeight>
+        <PageWidth>16in</PageWidth>
+        <LeftMargin>0in</LeftMargin>
+        <RightMargin>0in</RightMargin>
+        <TopMargin>0in</TopMargin>
+        <BottomMargin>0in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Public Function BlankZero(ByVal Value As Decimal)
+    if Value = 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankPos(ByVal Value As Decimal)
+    if Value &gt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankZeroAndPos(ByVal Value As Decimal)
+    if Value &gt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNeg(ByVal Value As Decimal)
+    if Value &lt; 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function BlankNegAndZero(ByVal Value As Decimal)
+    if Value &lt;= 0 then
+        Return ""
+    end if
+    Return Value
+End Function
+
+Public Function Filters(ByVal s As String) As String
+    Dim i As Integer
+    Dim ArrTxt() As String
+    Dim RetStr As String
+
+    If trim(s) &lt;&gt; "" Then
+        if s.Contains(",") Then
+            ArrTxt=s.Split(",")
+            For i=0 To UBound(ArrTxt)
+                If trim(ArrTxt(i)) &lt;&gt; trim("Document Type: Invoice") Then
+                    RetStr = RetStr + ArrTxt(i) &amp; vbNewLine
+                End If
+            Next i
+            Return RetStr
+        Else If trim(s) = trim("Document Type: Invoice") Then
+            Return ""
+        Else 
+            Return s
+        End If
+    Else 
+        Return ""
+    End If
+End Function
+</Code>
+  <Language>=User!Language</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+</Report>
